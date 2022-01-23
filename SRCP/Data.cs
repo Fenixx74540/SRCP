@@ -28,6 +28,8 @@ namespace SRCP
             this.nameAndSurname = nameAndSurname;
         }
 
+
+
         public Data(Data data)
         {
             this.day = data.day;

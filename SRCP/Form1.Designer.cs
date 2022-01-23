@@ -59,7 +59,7 @@ namespace SRCP
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.totalHours = new System.Windows.Forms.Label();
             this.shiftCode = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.shiftCodeCB = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -351,13 +351,19 @@ namespace SRCP
             this.shiftCode.TabIndex = 30;
             this.shiftCode.Text = "Shift code:";
             // 
-            // comboBox2
+            // shiftCodeCB
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(43, 289);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(159, 21);
-            this.comboBox2.TabIndex = 31;
+            this.shiftCodeCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.shiftCodeCB.FormattingEnabled = true;
+            this.shiftCodeCB.Items.AddRange(new object[] {
+            "Morning",
+            "Evening",
+            "Night"});
+            this.shiftCodeCB.Location = new System.Drawing.Point(43, 289);
+            this.shiftCodeCB.Name = "shiftCodeCB";
+            this.shiftCodeCB.Size = new System.Drawing.Size(159, 21);
+            this.shiftCodeCB.TabIndex = 31;
+            this.shiftCodeCB.SelectedIndexChanged += new System.EventHandler(this.shiftCodeCB_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -487,7 +493,7 @@ namespace SRCP
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.shiftCodeCB);
             this.Controls.Add(this.shiftCode);
             this.Controls.Add(this.totalHours);
             this.Controls.Add(this.textBox7);
@@ -520,6 +526,7 @@ namespace SRCP
             this.Controls.Add(this.Label1);
             this.Name = "Form1";
             this.Text = "Working time registration system";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -557,7 +564,7 @@ namespace SRCP
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label totalHours;
         private System.Windows.Forms.Label shiftCode;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox shiftCodeCB;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
