@@ -50,7 +50,6 @@ namespace SRCP
             this.day4 = new System.Windows.Forms.Label();
             this.day5 = new System.Windows.Forms.Label();
             this.day6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -69,6 +68,10 @@ namespace SRCP
             this.monthlyHours = new System.Windows.Forms.Label();
             this.overtime = new System.Windows.Forms.Label();
             this.nightShift = new System.Windows.Forms.Label();
+            this.FullNameTB = new System.Windows.Forms.TextBox();
+            this.FullNameLabel = new System.Windows.Forms.Label();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Label1
@@ -133,7 +136,7 @@ namespace SRCP
             // 
             this.labelNameDay0.AutoSize = true;
             this.labelNameDay0.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelNameDay0.Location = new System.Drawing.Point(12, 103);
+            this.labelNameDay0.Location = new System.Drawing.Point(16, 138);
             this.labelNameDay0.Name = "labelNameDay0";
             this.labelNameDay0.Size = new System.Drawing.Size(95, 13);
             this.labelNameDay0.TabIndex = 6;
@@ -144,7 +147,7 @@ namespace SRCP
             // 
             this.labelNameDay1.AutoSize = true;
             this.labelNameDay1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelNameDay1.Location = new System.Drawing.Point(113, 103);
+            this.labelNameDay1.Location = new System.Drawing.Point(117, 138);
             this.labelNameDay1.Name = "labelNameDay1";
             this.labelNameDay1.Size = new System.Drawing.Size(95, 13);
             this.labelNameDay1.TabIndex = 7;
@@ -154,7 +157,7 @@ namespace SRCP
             // 
             this.labelNameDay2.AutoSize = true;
             this.labelNameDay2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelNameDay2.Location = new System.Drawing.Point(214, 103);
+            this.labelNameDay2.Location = new System.Drawing.Point(218, 138);
             this.labelNameDay2.Name = "labelNameDay2";
             this.labelNameDay2.Size = new System.Drawing.Size(95, 13);
             this.labelNameDay2.TabIndex = 8;
@@ -164,7 +167,7 @@ namespace SRCP
             // 
             this.labelNameDay3.AutoSize = true;
             this.labelNameDay3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelNameDay3.Location = new System.Drawing.Point(315, 103);
+            this.labelNameDay3.Location = new System.Drawing.Point(319, 138);
             this.labelNameDay3.Name = "labelNameDay3";
             this.labelNameDay3.Size = new System.Drawing.Size(95, 13);
             this.labelNameDay3.TabIndex = 9;
@@ -174,7 +177,7 @@ namespace SRCP
             // 
             this.labelNameDay4.AutoSize = true;
             this.labelNameDay4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelNameDay4.Location = new System.Drawing.Point(416, 103);
+            this.labelNameDay4.Location = new System.Drawing.Point(420, 138);
             this.labelNameDay4.Name = "labelNameDay4";
             this.labelNameDay4.Size = new System.Drawing.Size(95, 13);
             this.labelNameDay4.TabIndex = 10;
@@ -184,7 +187,7 @@ namespace SRCP
             // 
             this.labelNameDay5.AutoSize = true;
             this.labelNameDay5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelNameDay5.Location = new System.Drawing.Point(517, 103);
+            this.labelNameDay5.Location = new System.Drawing.Point(521, 138);
             this.labelNameDay5.Name = "labelNameDay5";
             this.labelNameDay5.Size = new System.Drawing.Size(95, 13);
             this.labelNameDay5.TabIndex = 11;
@@ -194,7 +197,7 @@ namespace SRCP
             // 
             this.labelNameDay6.AutoSize = true;
             this.labelNameDay6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelNameDay6.Location = new System.Drawing.Point(618, 103);
+            this.labelNameDay6.Location = new System.Drawing.Point(622, 138);
             this.labelNameDay6.Name = "labelNameDay6";
             this.labelNameDay6.Size = new System.Drawing.Size(95, 13);
             this.labelNameDay6.TabIndex = 12;
@@ -204,7 +207,7 @@ namespace SRCP
             // 
             this.Total.AutoSize = true;
             this.Total.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Total.Location = new System.Drawing.Point(728, 116);
+            this.Total.Location = new System.Drawing.Point(732, 151);
             this.Total.Name = "Total";
             this.Total.Size = new System.Drawing.Size(36, 13);
             this.Total.TabIndex = 13;
@@ -214,7 +217,7 @@ namespace SRCP
             // 
             this.day0.AutoSize = true;
             this.day0.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.day0.Location = new System.Drawing.Point(40, 116);
+            this.day0.Location = new System.Drawing.Point(44, 151);
             this.day0.Name = "day0";
             this.day0.Size = new System.Drawing.Size(34, 13);
             this.day0.TabIndex = 14;
@@ -224,7 +227,7 @@ namespace SRCP
             // 
             this.day1.AutoSize = true;
             this.day1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.day1.Location = new System.Drawing.Point(141, 116);
+            this.day1.Location = new System.Drawing.Point(145, 151);
             this.day1.Name = "day1";
             this.day1.Size = new System.Drawing.Size(34, 13);
             this.day1.TabIndex = 15;
@@ -234,7 +237,7 @@ namespace SRCP
             // 
             this.day2.AutoSize = true;
             this.day2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.day2.Location = new System.Drawing.Point(243, 116);
+            this.day2.Location = new System.Drawing.Point(247, 151);
             this.day2.Name = "day2";
             this.day2.Size = new System.Drawing.Size(34, 13);
             this.day2.TabIndex = 16;
@@ -244,7 +247,7 @@ namespace SRCP
             // 
             this.day3.AutoSize = true;
             this.day3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.day3.Location = new System.Drawing.Point(343, 116);
+            this.day3.Location = new System.Drawing.Point(347, 151);
             this.day3.Name = "day3";
             this.day3.Size = new System.Drawing.Size(34, 13);
             this.day3.TabIndex = 17;
@@ -254,7 +257,7 @@ namespace SRCP
             // 
             this.day4.AutoSize = true;
             this.day4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.day4.Location = new System.Drawing.Point(446, 116);
+            this.day4.Location = new System.Drawing.Point(450, 151);
             this.day4.Name = "day4";
             this.day4.Size = new System.Drawing.Size(34, 13);
             this.day4.TabIndex = 18;
@@ -264,7 +267,7 @@ namespace SRCP
             // 
             this.day5.AutoSize = true;
             this.day5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.day5.Location = new System.Drawing.Point(546, 116);
+            this.day5.Location = new System.Drawing.Point(550, 151);
             this.day5.Name = "day5";
             this.day5.Size = new System.Drawing.Size(34, 13);
             this.day5.TabIndex = 19;
@@ -274,73 +277,65 @@ namespace SRCP
             // 
             this.day6.AutoSize = true;
             this.day6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.day6.Location = new System.Drawing.Point(647, 116);
+            this.day6.Location = new System.Drawing.Point(651, 151);
             this.day6.Name = "day6";
             this.day6.Size = new System.Drawing.Size(34, 13);
             this.day6.TabIndex = 20;
             this.day6.Text = "day6";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(43, 155);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(638, 21);
-            this.comboBox1.TabIndex = 21;
-            // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(43, 201);
+            this.textBox1.Location = new System.Drawing.Point(47, 186);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(31, 20);
+            this.textBox1.Size = new System.Drawing.Size(51, 20);
             this.textBox1.TabIndex = 22;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(144, 201);
+            this.textBox2.Location = new System.Drawing.Point(148, 186);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(31, 20);
+            this.textBox2.Size = new System.Drawing.Size(51, 20);
             this.textBox2.TabIndex = 23;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(246, 201);
+            this.textBox3.Location = new System.Drawing.Point(250, 186);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(31, 20);
+            this.textBox3.Size = new System.Drawing.Size(51, 20);
             this.textBox3.TabIndex = 24;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(346, 201);
+            this.textBox4.Location = new System.Drawing.Point(350, 186);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(31, 20);
+            this.textBox4.Size = new System.Drawing.Size(51, 20);
             this.textBox4.TabIndex = 25;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(449, 201);
+            this.textBox5.Location = new System.Drawing.Point(453, 186);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(31, 20);
+            this.textBox5.Size = new System.Drawing.Size(51, 20);
             this.textBox5.TabIndex = 26;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(549, 201);
+            this.textBox6.Location = new System.Drawing.Point(553, 186);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(31, 20);
+            this.textBox6.Size = new System.Drawing.Size(51, 20);
             this.textBox6.TabIndex = 27;
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(650, 201);
+            this.textBox7.Location = new System.Drawing.Point(654, 186);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(31, 20);
+            this.textBox7.Size = new System.Drawing.Size(51, 20);
             this.textBox7.TabIndex = 28;
             // 
             // totalHours
             // 
             this.totalHours.AutoSize = true;
-            this.totalHours.Location = new System.Drawing.Point(719, 204);
+            this.totalHours.Location = new System.Drawing.Point(723, 189);
             this.totalHours.Name = "totalHours";
             this.totalHours.Size = new System.Drawing.Size(55, 13);
             this.totalHours.TabIndex = 29;
@@ -440,11 +435,50 @@ namespace SRCP
             this.nightShift.TabIndex = 39;
             this.nightShift.Text = "nightShift";
             // 
+            // FullNameTB
+            // 
+            this.FullNameTB.Location = new System.Drawing.Point(179, 84);
+            this.FullNameTB.Name = "FullNameTB";
+            this.FullNameTB.Size = new System.Drawing.Size(436, 20);
+            this.FullNameTB.TabIndex = 40;
+            // 
+            // FullNameLabel
+            // 
+            this.FullNameLabel.AutoSize = true;
+            this.FullNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FullNameLabel.Location = new System.Drawing.Point(104, 87);
+            this.FullNameLabel.Name = "FullNameLabel";
+            this.FullNameLabel.Size = new System.Drawing.Size(65, 13);
+            this.FullNameLabel.TabIndex = 41;
+            this.FullNameLabel.Text = "Full name:";
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(573, 415);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(72, 23);
+            this.btnRefresh.TabIndex = 42;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(666, 415);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(72, 23);
+            this.btnSave.TabIndex = 43;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.FullNameLabel);
+            this.Controls.Add(this.FullNameTB);
             this.Controls.Add(this.nightShift);
             this.Controls.Add(this.overtime);
             this.Controls.Add(this.monthlyHours);
@@ -463,7 +497,6 @@ namespace SRCP
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.day6);
             this.Controls.Add(this.day5);
             this.Controls.Add(this.day4);
@@ -515,7 +548,6 @@ namespace SRCP
         private System.Windows.Forms.Label day4;
         private System.Windows.Forms.Label day5;
         private System.Windows.Forms.Label day6;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
@@ -534,6 +566,10 @@ namespace SRCP
         private System.Windows.Forms.Label monthlyHours;
         private System.Windows.Forms.Label overtime;
         private System.Windows.Forms.Label nightShift;
+        private System.Windows.Forms.TextBox FullNameTB;
+        private System.Windows.Forms.Label FullNameLabel;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnSave;
     }
 }
 
