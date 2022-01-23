@@ -39,7 +39,17 @@ namespace SRCP
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           /* miejsce na dodanie kolejnych Shifts do ComboBoxa*/
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'modelDataSet.Shifts' . Możesz go przenieść lub usunąć.
+            this.shiftsTableAdapter.Fill(this.modelDataSet.Shifts);
+            /* miejsce na dodanie kolejnych Shifts do ComboBoxa*/
+        }
+
+        private void shiftsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.shiftsBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.modelDataSet);
+
         }
     }
 }
