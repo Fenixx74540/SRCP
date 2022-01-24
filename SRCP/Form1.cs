@@ -21,6 +21,10 @@ namespace SRCP
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'modelDataSet.Shifts' . Możesz go przenieść lub usunąć.
+            this.shiftsTableAdapter.Fill(this.modelDataSet.Shifts);
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'modelDataSet.Shifts' . Możesz go przenieść lub usunąć.
+            this.shiftsTableAdapter.Fill(this.modelDataSet.Shifts);
             //Populate shiftCodeComboBox and set default option because it cant be null
             foreach (var item in Enum.GetValues(typeof(ShiftCode)))
             {
@@ -168,7 +172,23 @@ namespace SRCP
             nightShift.Text = sum.ToString();
         }
 
-        
+        private void shiftsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.shiftsBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.modelDataSet);
+
+        }
+
+        private void shiftsBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.shiftsBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.modelDataSet);
+
+        }
+
+
 
         //WIP
         /* private void button1_Click(object sender, EventArgs e)
