@@ -86,10 +86,10 @@ namespace SRCP
             this.label1.TabIndex = 0;
             this.label1.Text = "Week:";
             // 
-            // btnPreviousWeek
+            // weekBack
             // 
             this.weekBack.Location = new System.Drawing.Point(79, 20);
-            this.weekBack.Name = "btnPreviousWeek";
+            this.weekBack.Name = "weekBack";
             this.weekBack.Size = new System.Drawing.Size(64, 20);
             this.weekBack.TabIndex = 1;
             this.weekBack.Text = "<--";
@@ -123,10 +123,10 @@ namespace SRCP
             this.weekTo.TabIndex = 4;
             this.weekTo.Text = "weekTo";
             // 
-            // btnNextWeek
+            // weekForward
             // 
             this.weekForward.Location = new System.Drawing.Point(336, 20);
-            this.weekForward.Name = "btnNextWeek";
+            this.weekForward.Name = "weekForward";
             this.weekForward.Size = new System.Drawing.Size(64, 20);
             this.weekForward.TabIndex = 5;
             this.weekForward.Text = "-->";
@@ -136,16 +136,16 @@ namespace SRCP
             // day0
             // 
             this.day0.AutoSize = true;
-            this.day0.Location = new System.Drawing.Point(53, 94);
+            this.day0.Location = new System.Drawing.Point(39, 150);
             this.day0.Name = "day0";
-            this.day0.Size = new System.Drawing.Size(30, 13);
+            this.day0.Size = new System.Drawing.Size(45, 13);
             this.day0.TabIndex = 7;
-            this.day0.Text = "day0";
+            this.day0.Text = "Monday";
             // 
             // labelNameDay0
             // 
             this.labelNameDay0.AutoSize = true;
-            this.labelNameDay0.Location = new System.Drawing.Point(28, 70);
+            this.labelNameDay0.Location = new System.Drawing.Point(26, 125);
             this.labelNameDay0.Name = "labelNameDay0";
             this.labelNameDay0.Size = new System.Drawing.Size(82, 13);
             this.labelNameDay0.TabIndex = 8;
@@ -154,16 +154,16 @@ namespace SRCP
             // day1
             // 
             this.day1.AutoSize = true;
-            this.day1.Location = new System.Drawing.Point(134, 94);
+            this.day1.Location = new System.Drawing.Point(120, 150);
             this.day1.Name = "day1";
-            this.day1.Size = new System.Drawing.Size(30, 13);
+            this.day1.Size = new System.Drawing.Size(48, 13);
             this.day1.TabIndex = 9;
-            this.day1.Text = "day1";
+            this.day1.Text = "Tuesday";
             // 
             // labelNameDay1
             // 
             this.labelNameDay1.AutoSize = true;
-            this.labelNameDay1.Location = new System.Drawing.Point(111, 70);
+            this.labelNameDay1.Location = new System.Drawing.Point(109, 125);
             this.labelNameDay1.Name = "labelNameDay1";
             this.labelNameDay1.Size = new System.Drawing.Size(82, 13);
             this.labelNameDay1.TabIndex = 10;
@@ -172,16 +172,16 @@ namespace SRCP
             // day2
             // 
             this.day2.AutoSize = true;
-            this.day2.Location = new System.Drawing.Point(215, 94);
+            this.day2.Location = new System.Drawing.Point(201, 150);
             this.day2.Name = "day2";
-            this.day2.Size = new System.Drawing.Size(30, 13);
+            this.day2.Size = new System.Drawing.Size(64, 13);
             this.day2.TabIndex = 11;
-            this.day2.Text = "day2";
+            this.day2.Text = "Wednesday";
             // 
             // labelNameDay2
             // 
             this.labelNameDay2.AutoSize = true;
-            this.labelNameDay2.Location = new System.Drawing.Point(193, 70);
+            this.labelNameDay2.Location = new System.Drawing.Point(191, 125);
             this.labelNameDay2.Name = "labelNameDay2";
             this.labelNameDay2.Size = new System.Drawing.Size(82, 13);
             this.labelNameDay2.TabIndex = 12;
@@ -190,16 +190,16 @@ namespace SRCP
             // day3
             // 
             this.day3.AutoSize = true;
-            this.day3.Location = new System.Drawing.Point(299, 94);
+            this.day3.Location = new System.Drawing.Point(285, 150);
             this.day3.Name = "day3";
-            this.day3.Size = new System.Drawing.Size(30, 13);
+            this.day3.Size = new System.Drawing.Size(51, 13);
             this.day3.TabIndex = 13;
-            this.day3.Text = "day3";
+            this.day3.Text = "Thursday";
             // 
             // labelNameDay3
             // 
             this.labelNameDay3.AutoSize = true;
-            this.labelNameDay3.Location = new System.Drawing.Point(275, 70);
+            this.labelNameDay3.Location = new System.Drawing.Point(273, 125);
             this.labelNameDay3.Name = "labelNameDay3";
             this.labelNameDay3.Size = new System.Drawing.Size(82, 13);
             this.labelNameDay3.TabIndex = 14;
@@ -208,16 +208,16 @@ namespace SRCP
             // day5
             // 
             this.day5.AutoSize = true;
-            this.day5.Location = new System.Drawing.Point(464, 94);
+            this.day5.Location = new System.Drawing.Point(450, 150);
             this.day5.Name = "day5";
-            this.day5.Size = new System.Drawing.Size(30, 13);
+            this.day5.Size = new System.Drawing.Size(49, 13);
             this.day5.TabIndex = 15;
-            this.day5.Text = "day5";
+            this.day5.Text = "Saturday";
             // 
             // labelNameDay4
             // 
             this.labelNameDay4.AutoSize = true;
-            this.labelNameDay4.Location = new System.Drawing.Point(357, 70);
+            this.labelNameDay4.Location = new System.Drawing.Point(355, 125);
             this.labelNameDay4.Name = "labelNameDay4";
             this.labelNameDay4.Size = new System.Drawing.Size(82, 13);
             this.labelNameDay4.TabIndex = 16;
@@ -226,16 +226,16 @@ namespace SRCP
             // day4
             // 
             this.day4.AutoSize = true;
-            this.day4.Location = new System.Drawing.Point(384, 94);
+            this.day4.Location = new System.Drawing.Point(370, 150);
             this.day4.Name = "day4";
-            this.day4.Size = new System.Drawing.Size(30, 13);
+            this.day4.Size = new System.Drawing.Size(35, 13);
             this.day4.TabIndex = 17;
-            this.day4.Text = "day4";
+            this.day4.Text = "Friday";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(411, 70);
+            this.label14.Location = new System.Drawing.Point(409, 125);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(0, 13);
             this.label14.TabIndex = 18;
@@ -243,16 +243,16 @@ namespace SRCP
             // day6
             // 
             this.day6.AutoSize = true;
-            this.day6.Location = new System.Drawing.Point(545, 94);
+            this.day6.Location = new System.Drawing.Point(531, 150);
             this.day6.Name = "day6";
-            this.day6.Size = new System.Drawing.Size(30, 13);
+            this.day6.Size = new System.Drawing.Size(43, 13);
             this.day6.TabIndex = 19;
-            this.day6.Text = "day6";
+            this.day6.Text = "Sunday";
             // 
             // labelNameDay6
             // 
             this.labelNameDay6.AutoSize = true;
-            this.labelNameDay6.Location = new System.Drawing.Point(522, 70);
+            this.labelNameDay6.Location = new System.Drawing.Point(520, 125);
             this.labelNameDay6.Name = "labelNameDay6";
             this.labelNameDay6.Size = new System.Drawing.Size(82, 13);
             this.labelNameDay6.TabIndex = 20;
@@ -261,7 +261,7 @@ namespace SRCP
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(630, 86);
+            this.label17.Location = new System.Drawing.Point(628, 141);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(31, 13);
             this.label17.TabIndex = 21;
@@ -270,7 +270,7 @@ namespace SRCP
             // labelNameDay5
             // 
             this.labelNameDay5.AutoSize = true;
-            this.labelNameDay5.Location = new System.Drawing.Point(440, 70);
+            this.labelNameDay5.Location = new System.Drawing.Point(438, 125);
             this.labelNameDay5.Name = "labelNameDay5";
             this.labelNameDay5.Size = new System.Drawing.Size(82, 13);
             this.labelNameDay5.TabIndex = 22;
@@ -426,7 +426,7 @@ namespace SRCP
             // 
             // nameAndSurnameTextField
             // 
-            this.nameAndSurnameTextField.Location = new System.Drawing.Point(193, 138);
+            this.nameAndSurnameTextField.Location = new System.Drawing.Point(193, 77);
             this.nameAndSurnameTextField.Name = "nameAndSurnameTextField";
             this.nameAndSurnameTextField.Size = new System.Drawing.Size(325, 20);
             this.nameAndSurnameTextField.TabIndex = 41;
@@ -434,7 +434,7 @@ namespace SRCP
             // name
             // 
             this.name.AutoSize = true;
-            this.name.Location = new System.Drawing.Point(90, 140);
+            this.name.Location = new System.Drawing.Point(90, 79);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(102, 13);
             this.name.TabIndex = 42;
@@ -448,7 +448,6 @@ namespace SRCP
             this.button1.TabIndex = 43;
             this.button1.Text = "Odśwież";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -515,6 +514,7 @@ namespace SRCP
             this.PerformLayout();
 
         }
+
 
         #endregion
 

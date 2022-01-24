@@ -168,46 +168,48 @@ namespace SRCP
             nightShift.Text = sum.ToString();
         }
 
+        
+
         //WIP
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //miesi�c do wy�wietlenia okre�lony jest za pomoc� wi�kszo�ci dni w wyswietlanym tygodniu
-            //wystarczy sprawdzi� �rodek tygodnia, aby wiedzie� kt�rego miesi�ca dni jest wi�cej w tygodniu
-            DateTime pom = week.AddDays(4);
-            int month = pom.Month;
+        /* private void button1_Click(object sender, EventArgs e)
+         {
+             //miesi�c do wy�wietlenia okre�lony jest za pomoc� wi�kszo�ci dni w wyswietlanym tygodniu
+             //wystarczy sprawdzi� �rodek tygodnia, aby wiedzie� kt�rego miesi�ca dni jest wi�cej w tygodniu
+             DateTime pom = week.AddDays(4);
+             int month = pom.Month;
 
-            //wszystkie przepracowane godziny w stawce standardowej
-            List<Data> dayHours = dataService.getDataByMonth(month);
-            dayHours.RemoveAll(x => x.shiftCode == ShiftCode.Night);
-            foreach (Data data in dayHours)
-            {
-                if (data.hoursWorked > 8)
-                {
-                    data.hoursWorked = 8;
-                }
-            }
-            int sum = dayHours.Sum(x => x.hoursWorked);
-            currentHours.Text = sum.ToString();
+             //wszystkie przepracowane godziny w stawce standardowej
+             List<Data> dayHours = dataService.getDataByMonth(month);
+             dayHours.RemoveAll(x => x.shiftCode == ShiftCode.Night);
+             foreach (Data data in dayHours)
+             {
+                 if (data.hoursWorked > 8)
+                 {
+                     data.hoursWorked = 8;
+                 }
+             }
+             int sum = dayHours.Sum(x => x.hoursWorked);
+             currentHours.Text = sum.ToString();
 
-            //ilo�� godzin do przepracowania
-            monthlyHours.Text = (monthlyHoursNorm - sum).ToString();
+             //ilo�� godzin do przepracowania
+             monthlyHours.Text = (monthlyHoursNorm - sum).ToString();
 
-            //nadgodziny
-            List<Data> overtimeHours = dataService.getDataByMonth(month);
-            overtimeHours.RemoveAll(x => x.shiftCode == ShiftCode.Night);
-            foreach (Data data in overtimeHours)
-            {
-                data.hoursWorked -= 8;
-                if (data.hoursWorked < 0) data.hoursWorked = 0;
-            }
-            sum = overtimeHours.Sum(x => x.hoursWorked);
-            overtime.Text = sum.ToString();
+             //nadgodziny
+             List<Data> overtimeHours = dataService.getDataByMonth(month);
+             overtimeHours.RemoveAll(x => x.shiftCode == ShiftCode.Night);
+             foreach (Data data in overtimeHours)
+             {
+                 data.hoursWorked -= 8;
+                 if (data.hoursWorked < 0) data.hoursWorked = 0;
+             }
+             sum = overtimeHours.Sum(x => x.hoursWorked);
+             overtime.Text = sum.ToString();
 
-            //Nocki
-            List<Data> nightHours = dataService.getDataByMonth(month);
-            nightHours.RemoveAll(x => x.shiftCode != ShiftCode.Night);
-            sum = nightHours.Sum(x => x.hoursWorked);
-            nightShift.Text = sum.ToString();
-        }
+             //Nocki
+             List<Data> nightHours = dataService.getDataByMonth(month);
+             nightHours.RemoveAll(x => x.shiftCode != ShiftCode.Night);
+             sum = nightHours.Sum(x => x.hoursWorked);
+             nightShift.Text = sum.ToString();
+         }*/
     }
 }
