@@ -10,6 +10,8 @@
 
 #pragma warning disable 1591
 
+using System;
+
 namespace SRCP {
     
     
@@ -1191,6 +1193,11 @@ SELECT Id, WeekNo, Shift, Hours, FullName FROM Shifts WHERE (Id = @Id)";
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(global::System.Nullable<int> WeekNo, string Shift, global::System.Nullable<int> Hours, string FullName, int Original_Id, global::System.Nullable<int> Original_WeekNo, string Original_Shift, global::System.Nullable<int> Original_Hours, string Original_FullName) {
             return this.Update(Original_Id, WeekNo, Shift, Hours, FullName, Original_Id, Original_WeekNo, Original_Shift, Original_Hours, Original_FullName);
+        }
+
+        internal void Fill(object shifts)
+        {
+            throw new NotImplementedException();
         }
     }
     
