@@ -34,6 +34,7 @@ namespace SRCP
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.Label weekNoLabel;
             this.label1 = new System.Windows.Forms.Label();
             this.weekBack = new System.Windows.Forms.Button();
             this.weekFrom = new System.Windows.Forms.Label();
@@ -82,19 +83,22 @@ namespace SRCP
             this.shiftsTableAdapter = new SRCP.ModelDataSetTableAdapters.ShiftsTableAdapter();
             this.tableAdapterManager = new SRCP.ModelDataSetTableAdapters.TableAdapterManager();
             this.shiftsBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.shiftsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.nameAndSurnameTextField = new System.Windows.Forms.TextBox();
+            this.countBtn = new System.Windows.Forms.Button();
+            this.weekNoTextBox = new System.Windows.Forms.TextBox();
+            weekNoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.modelDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shiftsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shiftsBindingNavigator)).BeginInit();
@@ -474,6 +478,7 @@ namespace SRCP
             this.button2.TabIndex = 44;
             this.button2.Text = "Zapisz";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // modelDataSet
             // 
@@ -525,6 +530,31 @@ namespace SRCP
             this.shiftsBindingNavigator.TabIndex = 45;
             this.shiftsBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Dodaj nowy";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(29, 22);
+            this.bindingNavigatorCountItem.Text = "z {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Suma elementów";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Usuń";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -558,16 +588,9 @@ namespace SRCP
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Bieżąca pozycja";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(29, 22);
-            this.bindingNavigatorCountItem.Text = "z {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Suma elementów";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -590,26 +613,8 @@ namespace SRCP
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Dodaj nowy";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Usuń";
             // 
             // shiftsBindingNavigatorSaveItem
             // 
@@ -628,11 +633,41 @@ namespace SRCP
             this.nameAndSurnameTextField.Size = new System.Drawing.Size(320, 20);
             this.nameAndSurnameTextField.TabIndex = 46;
             // 
+            // countBtn
+            // 
+            this.countBtn.Location = new System.Drawing.Point(619, 147);
+            this.countBtn.Name = "countBtn";
+            this.countBtn.Size = new System.Drawing.Size(75, 23);
+            this.countBtn.TabIndex = 47;
+            this.countBtn.Text = "Count hours";
+            this.countBtn.UseVisualStyleBackColor = true;
+            this.countBtn.Click += new System.EventHandler(this.countBtn_Click);
+            // 
+            // weekNoLabel
+            // 
+            weekNoLabel.AutoSize = true;
+            weekNoLabel.Location = new System.Drawing.Point(437, 37);
+            weekNoLabel.Name = "weekNoLabel";
+            weekNoLabel.Size = new System.Drawing.Size(56, 13);
+            weekNoLabel.TabIndex = 47;
+            weekNoLabel.Text = "Week No:";
+            // 
+            // weekNoTextBox
+            // 
+            this.weekNoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.shiftsBindingSource, "WeekNo", true));
+            this.weekNoTextBox.Location = new System.Drawing.Point(499, 34);
+            this.weekNoTextBox.Name = "weekNoTextBox";
+            this.weekNoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.weekNoTextBox.TabIndex = 48;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(715, 357);
+            this.Controls.Add(weekNoLabel);
+            this.Controls.Add(this.weekNoTextBox);
+            this.Controls.Add(this.countBtn);
             this.Controls.Add(this.nameAndSurnameTextField);
             this.Controls.Add(this.shiftsBindingNavigator);
             this.Controls.Add(this.button2);
@@ -754,5 +789,7 @@ namespace SRCP
         private ToolStripSeparator bindingNavigatorSeparator2;
         private ToolStripButton shiftsBindingNavigatorSaveItem;
         private TextBox nameAndSurnameTextField;
+        private Button countBtn;
+        private TextBox weekNoTextBox;
     }
 }

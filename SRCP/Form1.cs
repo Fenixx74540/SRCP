@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace SRCP
 {
@@ -17,6 +18,21 @@ namespace SRCP
         public Form1()
         {
             InitializeComponent();
+        }
+
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\mateu\Source\Repos\Fenixx74540\SRCP\SRCP\Database.mdf;Integrated Security=True");
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //int weekNoInt = Convert.ToInt16(weekNoTextBox.Text);
+            int weekNoInt = int.Parse(weekNoTextBox.Text);
+
+            SqlCommand sqlCommand = new SqlCommand("INSERT INTO Shifts (WeekNo, Shift, Hours, FullName) VALUES('" +weekNoInt+ "','" +shiftCodeComboBox.Text+ "','"+totalHours.Text+"','"+nameAndSurnameTextField.Text+"')", con);
+
+            con.Open();
+            sqlCommand.ExecuteNonQuery();
+            con.Close();
+            MessageBox.Show("Data saved Successfuly");
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -187,6 +203,22 @@ namespace SRCP
             this.tableAdapterManager.UpdateAll(this.modelDataSet);
 
         }
+
+        private void countBtn_Click(object sender, EventArgs e)
+        {
+            int monday = int.Parse(textBox0.Text);
+            int tuesday = int.Parse(textBox1.Text);
+            int wednesday = int.Parse(textBox2.Text);
+            int thursday = int.Parse(textBox3.Text);
+            int friday = int.Parse(textBox4.Text);
+            int saturday = int.Parse(textBox5.Text);
+            int sunday = int.Parse(textBox6.Text);
+            int count = monday + tuesday + wednesday + thursday + friday + saturday + sunday;
+            totalHours.Text = count.ToString();
+
+        }
+
+        
 
 
 
