@@ -33,8 +33,8 @@ namespace SRCP
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             System.Windows.Forms.Label weekNoLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.weekBack = new System.Windows.Forms.Button();
             this.weekFrom = new System.Windows.Forms.Label();
@@ -73,10 +73,7 @@ namespace SRCP
             this.monthlyHours = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.overtime = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.nightShift = new System.Windows.Forms.Label();
             this.name = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.modelDataSet = new SRCP.ModelDataSet();
             this.shiftsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -98,12 +95,27 @@ namespace SRCP
             this.nameAndSurnameTextField = new System.Windows.Forms.TextBox();
             this.countBtn = new System.Windows.Forms.Button();
             this.weekNoTextBox = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.button4 = new System.Windows.Forms.Button();
+            this.weekNoTB = new System.Windows.Forms.TextBox();
             weekNoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.modelDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shiftsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shiftsBindingNavigator)).BeginInit();
             this.shiftsBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // weekNoLabel
+            // 
+            weekNoLabel.AutoSize = true;
+            weekNoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            weekNoLabel.Location = new System.Drawing.Point(437, 37);
+            weekNoLabel.Name = "weekNoLabel";
+            weekNoLabel.Size = new System.Drawing.Size(64, 13);
+            weekNoLabel.TabIndex = 47;
+            weekNoLabel.Text = "Week No:";
             // 
             // label1
             // 
@@ -164,11 +176,12 @@ namespace SRCP
             // day0
             // 
             this.day0.AutoSize = true;
+            this.day0.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.day0.Location = new System.Drawing.Point(53, 94);
             this.day0.Name = "day0";
-            this.day0.Size = new System.Drawing.Size(30, 13);
+            this.day0.Size = new System.Drawing.Size(51, 13);
             this.day0.TabIndex = 7;
-            this.day0.Text = "day0";
+            this.day0.Text = "Monday";
             // 
             // labelNameDay0
             // 
@@ -182,11 +195,12 @@ namespace SRCP
             // day1
             // 
             this.day1.AutoSize = true;
+            this.day1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.day1.Location = new System.Drawing.Point(134, 94);
             this.day1.Name = "day1";
-            this.day1.Size = new System.Drawing.Size(30, 13);
+            this.day1.Size = new System.Drawing.Size(55, 13);
             this.day1.TabIndex = 9;
-            this.day1.Text = "day1";
+            this.day1.Text = "Tuesday";
             // 
             // labelNameDay1
             // 
@@ -200,11 +214,12 @@ namespace SRCP
             // day2
             // 
             this.day2.AutoSize = true;
+            this.day2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.day2.Location = new System.Drawing.Point(215, 94);
             this.day2.Name = "day2";
-            this.day2.Size = new System.Drawing.Size(30, 13);
+            this.day2.Size = new System.Drawing.Size(73, 13);
             this.day2.TabIndex = 11;
-            this.day2.Text = "day2";
+            this.day2.Text = "Wednesday";
             // 
             // labelNameDay2
             // 
@@ -218,11 +233,12 @@ namespace SRCP
             // day3
             // 
             this.day3.AutoSize = true;
+            this.day3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.day3.Location = new System.Drawing.Point(299, 94);
             this.day3.Name = "day3";
-            this.day3.Size = new System.Drawing.Size(30, 13);
+            this.day3.Size = new System.Drawing.Size(59, 13);
             this.day3.TabIndex = 13;
-            this.day3.Text = "day3";
+            this.day3.Text = "Thursday";
             // 
             // labelNameDay3
             // 
@@ -236,11 +252,12 @@ namespace SRCP
             // day5
             // 
             this.day5.AutoSize = true;
+            this.day5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.day5.Location = new System.Drawing.Point(464, 94);
             this.day5.Name = "day5";
-            this.day5.Size = new System.Drawing.Size(30, 13);
+            this.day5.Size = new System.Drawing.Size(57, 13);
             this.day5.TabIndex = 15;
-            this.day5.Text = "day5";
+            this.day5.Text = "Saturday";
             // 
             // labelNameDay4
             // 
@@ -254,11 +271,12 @@ namespace SRCP
             // day4
             // 
             this.day4.AutoSize = true;
+            this.day4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.day4.Location = new System.Drawing.Point(384, 94);
             this.day4.Name = "day4";
-            this.day4.Size = new System.Drawing.Size(30, 13);
+            this.day4.Size = new System.Drawing.Size(41, 13);
             this.day4.TabIndex = 17;
-            this.day4.Text = "day4";
+            this.day4.Text = "Friday";
             // 
             // label14
             // 
@@ -271,11 +289,12 @@ namespace SRCP
             // day6
             // 
             this.day6.AutoSize = true;
+            this.day6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.day6.Location = new System.Drawing.Point(545, 94);
             this.day6.Name = "day6";
-            this.day6.Size = new System.Drawing.Size(30, 13);
+            this.day6.Size = new System.Drawing.Size(49, 13);
             this.day6.TabIndex = 19;
-            this.day6.Text = "day6";
+            this.day6.Text = "Sunday";
             // 
             // labelNameDay6
             // 
@@ -289,9 +308,10 @@ namespace SRCP
             // label17
             // 
             this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label17.Location = new System.Drawing.Point(630, 86);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(31, 13);
+            this.label17.Size = new System.Drawing.Size(36, 13);
             this.label17.TabIndex = 21;
             this.label17.Text = "Total";
             // 
@@ -310,6 +330,8 @@ namespace SRCP
             this.textBox0.Name = "textBox0";
             this.textBox0.Size = new System.Drawing.Size(78, 20);
             this.textBox0.TabIndex = 23;
+            this.textBox0.TextChanged += new System.EventHandler(this.textBox0_Changed);
+            this.textBox0.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyDigitsKeyPress);
             // 
             // textBox1
             // 
@@ -317,6 +339,8 @@ namespace SRCP
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(78, 20);
             this.textBox1.TabIndex = 24;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_Changed);
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyDigitsKeyPress);
             // 
             // textBox2
             // 
@@ -324,13 +348,18 @@ namespace SRCP
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(78, 20);
             this.textBox2.TabIndex = 25;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_Changed);
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyDigitsKeyPress);
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(275, 119);
+            this.textBox3.MaxLength = 2;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(78, 20);
             this.textBox3.TabIndex = 26;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_Changed);
+            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyDigitsKeyPress);
             // 
             // textBox4
             // 
@@ -338,6 +367,8 @@ namespace SRCP
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(78, 20);
             this.textBox4.TabIndex = 27;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_Changed);
+            this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyDigitsKeyPress);
             // 
             // textBox5
             // 
@@ -345,6 +376,8 @@ namespace SRCP
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(78, 20);
             this.textBox5.TabIndex = 28;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_Changed);
+            this.textBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyDigitsKeyPress);
             // 
             // textBox6
             // 
@@ -352,6 +385,8 @@ namespace SRCP
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(78, 20);
             this.textBox6.TabIndex = 29;
+            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_Changed);
+            this.textBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyDigitsKeyPress);
             // 
             // totalHours
             // 
@@ -365,16 +400,17 @@ namespace SRCP
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 234);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Location = new System.Drawing.Point(28, 204);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 13);
+            this.label3.Size = new System.Drawing.Size(69, 13);
             this.label3.TabIndex = 31;
             this.label3.Text = "Shift code:";
             // 
             // shiftCodeComboBox
             // 
             this.shiftCodeComboBox.FormattingEnabled = true;
-            this.shiftCodeComboBox.Location = new System.Drawing.Point(28, 250);
+            this.shiftCodeComboBox.Location = new System.Drawing.Point(28, 223);
             this.shiftCodeComboBox.Name = "shiftCodeComboBox";
             this.shiftCodeComboBox.Size = new System.Drawing.Size(160, 21);
             this.shiftCodeComboBox.TabIndex = 32;
@@ -383,16 +419,17 @@ namespace SRCP
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(387, 182);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.Location = new System.Drawing.Point(397, 182);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(195, 13);
+            this.label4.Size = new System.Drawing.Size(230, 13);
             this.label4.TabIndex = 33;
-            this.label4.Text = "The current number of hours this month:";
+            this.label4.Text = "The current number of hours this week:";
             // 
             // currentHours
             // 
             this.currentHours.AutoSize = true;
-            this.currentHours.Location = new System.Drawing.Point(594, 182);
+            this.currentHours.Location = new System.Drawing.Point(623, 182);
             this.currentHours.Name = "currentHours";
             this.currentHours.Size = new System.Drawing.Size(68, 13);
             this.currentHours.TabIndex = 34;
@@ -401,16 +438,17 @@ namespace SRCP
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(378, 213);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label6.Location = new System.Drawing.Point(387, 204);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(204, 13);
+            this.label6.Size = new System.Drawing.Size(240, 13);
             this.label6.TabIndex = 35;
-            this.label6.Text = "Number of hours to be worked this month:";
+            this.label6.Text = "Number of hours to be worked this week:";
             // 
             // monthlyHours
             // 
             this.monthlyHours.AutoSize = true;
-            this.monthlyHours.Location = new System.Drawing.Point(594, 213);
+            this.monthlyHours.Location = new System.Drawing.Point(623, 204);
             this.monthlyHours.Name = "monthlyHours";
             this.monthlyHours.Size = new System.Drawing.Size(71, 13);
             this.monthlyHours.TabIndex = 36;
@@ -419,62 +457,37 @@ namespace SRCP
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(528, 244);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label8.Location = new System.Drawing.Point(566, 222);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(52, 13);
+            this.label8.Size = new System.Drawing.Size(61, 13);
             this.label8.TabIndex = 37;
             this.label8.Text = "Overtime:";
             // 
             // overtime
             // 
             this.overtime.AutoSize = true;
-            this.overtime.Location = new System.Drawing.Point(594, 244);
+            this.overtime.Location = new System.Drawing.Point(623, 222);
             this.overtime.Name = "overtime";
             this.overtime.Size = new System.Drawing.Size(47, 13);
             this.overtime.TabIndex = 38;
             this.overtime.Text = "overtime";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(522, 274);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(57, 13);
-            this.label10.TabIndex = 39;
-            this.label10.Text = "Night shift:";
-            // 
-            // nightShift
-            // 
-            this.nightShift.AutoSize = true;
-            this.nightShift.Location = new System.Drawing.Point(594, 274);
-            this.nightShift.Name = "nightShift";
-            this.nightShift.Size = new System.Drawing.Size(51, 13);
-            this.nightShift.TabIndex = 40;
-            this.nightShift.Text = "nightShift";
-            // 
             // name
             // 
             this.name.AutoSize = true;
-            this.name.Location = new System.Drawing.Point(28, 166);
+            this.name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.name.Location = new System.Drawing.Point(28, 159);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(102, 13);
+            this.name.Size = new System.Drawing.Size(119, 13);
             this.name.TabIndex = 42;
             this.name.Text = "Name and surname:";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(512, 311);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(64, 20);
-            this.button1.TabIndex = 43;
-            this.button1.Text = "Odśwież";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(581, 311);
+            this.button2.Location = new System.Drawing.Point(256, 224);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(64, 20);
+            this.button2.Size = new System.Drawing.Size(97, 20);
             this.button2.TabIndex = 44;
             this.button2.Text = "Zapisz";
             this.button2.UseVisualStyleBackColor = true;
@@ -628,9 +641,9 @@ namespace SRCP
             // nameAndSurnameTextField
             // 
             this.nameAndSurnameTextField.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.shiftsBindingSource, "FullName", true));
-            this.nameAndSurnameTextField.Location = new System.Drawing.Point(28, 182);
+            this.nameAndSurnameTextField.Location = new System.Drawing.Point(28, 175);
             this.nameAndSurnameTextField.Name = "nameAndSurnameTextField";
-            this.nameAndSurnameTextField.Size = new System.Drawing.Size(320, 20);
+            this.nameAndSurnameTextField.Size = new System.Drawing.Size(325, 20);
             this.nameAndSurnameTextField.TabIndex = 46;
             // 
             // countBtn
@@ -643,38 +656,70 @@ namespace SRCP
             this.countBtn.UseVisualStyleBackColor = true;
             this.countBtn.Click += new System.EventHandler(this.countBtn_Click);
             // 
-            // weekNoLabel
-            // 
-            weekNoLabel.AutoSize = true;
-            weekNoLabel.Location = new System.Drawing.Point(437, 37);
-            weekNoLabel.Name = "weekNoLabel";
-            weekNoLabel.Size = new System.Drawing.Size(56, 13);
-            weekNoLabel.TabIndex = 47;
-            weekNoLabel.Text = "Week No:";
-            // 
             // weekNoTextBox
             // 
             this.weekNoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.shiftsBindingSource, "WeekNo", true));
-            this.weekNoTextBox.Location = new System.Drawing.Point(499, 34);
+            this.weekNoTextBox.Location = new System.Drawing.Point(504, 34);
             this.weekNoTextBox.Name = "weekNoTextBox";
             this.weekNoTextBox.Size = new System.Drawing.Size(100, 20);
             this.weekNoTextBox.TabIndex = 48;
+            this.weekNoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyDigitsKeyPress);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(532, 276);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 49;
+            this.button3.Text = "Show all";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(7, 261);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.Size = new System.Drawing.Size(514, 220);
+            this.dataGridView.TabIndex = 50;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(532, 318);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(109, 23);
+            this.button4.TabIndex = 51;
+            this.button4.Text = "Search by week No";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // weekNoTB
+            // 
+            this.weekNoTB.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.shiftsBindingSource, "FullName", true));
+            this.weekNoTB.Location = new System.Drawing.Point(647, 318);
+            this.weekNoTB.MaxLength = 50;
+            this.weekNoTB.Name = "weekNoTB";
+            this.weekNoTB.Size = new System.Drawing.Size(56, 20);
+            this.weekNoTB.TabIndex = 52;
+            this.weekNoTB.Text = "Week No";
+            this.weekNoTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyDigitsKeyPress);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(715, 357);
+            this.ClientSize = new System.Drawing.Size(715, 493);
+            this.Controls.Add(this.weekNoTB);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.dataGridView);
+            this.Controls.Add(this.button3);
             this.Controls.Add(weekNoLabel);
             this.Controls.Add(this.weekNoTextBox);
             this.Controls.Add(this.countBtn);
             this.Controls.Add(this.nameAndSurnameTextField);
             this.Controls.Add(this.shiftsBindingNavigator);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.name);
-            this.Controls.Add(this.nightShift);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.overtime);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.monthlyHours);
@@ -721,6 +766,7 @@ namespace SRCP
             ((System.ComponentModel.ISupportInitialize)(this.shiftsBindingNavigator)).EndInit();
             this.shiftsBindingNavigator.ResumeLayout(false);
             this.shiftsBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -766,10 +812,7 @@ namespace SRCP
         private Label monthlyHours;
         private Label label8;
         private Label overtime;
-        private Label label10;
-        private Label nightShift;
         private Label name;
-        private Button button1;
         private Button button2;
         private ModelDataSet modelDataSet;
         private BindingSource shiftsBindingSource;
@@ -791,5 +834,9 @@ namespace SRCP
         private TextBox nameAndSurnameTextField;
         private Button countBtn;
         private TextBox weekNoTextBox;
+        private Button button3;
+        private DataGridView dataGridView;
+        private Button button4;
+        private TextBox weekNoTB;
     }
 }

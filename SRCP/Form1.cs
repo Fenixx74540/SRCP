@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace SRCP
 {
@@ -10,7 +11,8 @@ namespace SRCP
     {
         DataService dataService = new DataService();
 
-        int monthlyHoursNorm = 160;
+        int monthlyHoursNorm = 40;
+        int daylyHoursMax = 24;
 
         DateTime showedWeek;
         List<Label> labelsOfTheWeek = new List<Label>();
@@ -24,7 +26,7 @@ namespace SRCP
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //int weekNoInt = Convert.ToInt16(weekNoTextBox.Text);
+            
             int weekNoInt = int.Parse(weekNoTextBox.Text);
 
             SqlCommand sqlCommand = new SqlCommand("INSERT INTO Shifts (WeekNo, Shift, Hours, FullName) VALUES('" +weekNoInt+ "','" +shiftCodeComboBox.Text+ "','"+totalHours.Text+"','"+nameAndSurnameTextField.Text+"')", con);
@@ -33,6 +35,27 @@ namespace SRCP
             sqlCommand.ExecuteNonQuery();
             con.Close();
             MessageBox.Show("Data saved Successfuly");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT * FROM Shifts", con);
+            DataTable dtbl = new DataTable();   
+            sqlDataAdapter.Fill(dtbl);
+            dataGridView.DataSource = dtbl;
+            con.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int weekNoInt = int.Parse(weekNoTB.Text);
+            con.Open();
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT * FROM Shifts WHERE WeekNo = '" + weekNoInt + "' ", con);
+            DataTable dtbl = new DataTable();
+            sqlDataAdapter.Fill(dtbl);
+            dataGridView.DataSource = dtbl;
+            con.Close();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -149,7 +172,7 @@ namespace SRCP
 
         private void setCurrentHours(DateTime week)
         {
-            //miesi�c do wy�wietlenia okre�lony jest za pomoc� wi�kszo�ci dni w wyswietlanym tygodniu
+            /*//miesi�c do wy�wietlenia okre�lony jest za pomoc� wi�kszo�ci dni w wyswietlanym tygodniu
             //wystarczy sprawdzi� �rodek tygodnia, aby wiedzie� kt�rego miesi�ca dni jest wi�cej w tygodniu
             DateTime pom = week.AddDays(4);
             int month = pom.Month;
@@ -166,12 +189,12 @@ namespace SRCP
             }
             int sum = dayHours.Sum(x => x.hoursWorked);
             currentHours.Text = sum.ToString();
+            */
 
-            //ilo�� godzin do przepracowania
-            monthlyHours.Text = (monthlyHoursNorm - sum).ToString();
+            
 
             //nadgodziny
-            List<Data> overtimeHours = dataService.getDataByMonth(month);
+            /*List<Data> overtimeHours = dataService.getDataByMonth(month);
             overtimeHours.RemoveAll(x => x.shiftCode == ShiftCode.Night);
             foreach (Data data in overtimeHours)
             {
@@ -179,13 +202,13 @@ namespace SRCP
                 if (data.hoursWorked < 0) data.hoursWorked = 0;
             }
             sum = overtimeHours.Sum(x => x.hoursWorked);
-            overtime.Text = sum.ToString();
+            overtime.Text = sum.ToString();*/
 
             //Nocki
-            List<Data> nightHours = dataService.getDataByMonth(month);
+           /* List<Data> nightHours = dataService.getDataByMonth(month);
             nightHours.RemoveAll(x => x.shiftCode != ShiftCode.Night);
             sum = nightHours.Sum(x => x.hoursWorked);
-            nightShift.Text = sum.ToString();
+            nightShift.Text = sum.ToString();*/
         }
 
         private void shiftsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -215,10 +238,135 @@ namespace SRCP
             int sunday = int.Parse(textBox6.Text);
             int count = monday + tuesday + wednesday + thursday + friday + saturday + sunday;
             totalHours.Text = count.ToString();
+            currentHours.Text = count.ToString();
 
+
+            //ilosc godzin do przepracowania
+            
+            int totalHoursInt = int.Parse(totalHours.Text);
+            if (totalHoursInt < monthlyHoursNorm)
+            {
+                monthlyHours.Text = (monthlyHoursNorm - totalHoursInt).ToString();
+            }
+            else
+                monthlyHours.Text = "None";
+            //nagodziny
+            if (totalHoursInt > monthlyHoursNorm)
+            {
+                overtime.Text = (totalHoursInt - monthlyHoursNorm).ToString();
+            }
+            else
+                overtime.Text = "None";
         }
 
-        
+
+        //mozna wpisac tylko cyfry, spacje i delete
+        private void onlyDigitsKeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+            }
+        }
+        //limit godzin od zero do 24
+        private void textBox0_Changed(object sender, EventArgs e)
+        {
+            int box_int = 0;
+            Int32.TryParse(textBox0.Text, out box_int);
+            if (box_int < 0 && textBox0 != null)
+            {
+                textBox0.Text = "0";
+            }
+            else if (box_int > 24 && textBox0 != null)
+            {
+                textBox0.Text = "24";
+                MessageBox.Show("Maximum allowed hours to work per day is 24");
+            }
+        }
+        private void textBox1_Changed(object sender, EventArgs e)
+        {
+            int box_int = 0;
+            Int32.TryParse(textBox1.Text, out box_int);
+            if (box_int < 0 && textBox1 != null)
+            {
+                textBox1.Text = "0";
+            }
+            else if (box_int > 24 && textBox1 != null)
+            {
+                textBox1.Text = "24";
+                MessageBox.Show("Maximum allowed hours to work per day is 24");
+            }
+        }private void textBox2_Changed(object sender, EventArgs e)
+        {
+            int box_int = 0;
+            Int32.TryParse(textBox2.Text, out box_int);
+            if (box_int < 0 && textBox2 != null)
+            {
+                textBox2.Text = "0";
+            }
+            else if (box_int > 24 && textBox2 != null)
+            {
+                textBox2.Text = "24";
+                MessageBox.Show("Maximum allowed hours to work per day is 24");
+            }
+        }private void textBox3_Changed(object sender, EventArgs e)
+        {
+            int box_int = 0;
+            Int32.TryParse(textBox3.Text, out box_int);
+            if (box_int < 0 && textBox3 != null)
+            {
+                textBox3.Text = "0";
+            }
+            else if (box_int > 24 && textBox3 != null)
+            {
+                textBox3.Text = "24";
+                MessageBox.Show("Maximum allowed hours to work per day is 24");
+            }
+        }private void textBox4_Changed(object sender, EventArgs e)
+        {
+            int box_int = 0;
+            Int32.TryParse(textBox4.Text, out box_int);
+            if (box_int < 0 && textBox4 != null)
+            {
+                textBox4.Text = "0";
+            }
+            else if (box_int > 24 && textBox4 != null)
+            {
+                textBox4.Text = "24";
+                MessageBox.Show("Maximum allowed hours to work per day is 24");
+            }
+        }private void textBox5_Changed(object sender, EventArgs e)
+        {
+            int box_int = 0;
+            Int32.TryParse(textBox5.Text, out box_int);
+            if (box_int < 0 && textBox5 != null)
+            {
+                textBox5.Text = "0";
+            }
+            else if (box_int > 24 && textBox5 != null)
+            {
+                textBox5.Text = "24";
+                MessageBox.Show("Maximum allowed hours to work per day is 24");
+            }
+        }private void textBox6_Changed(object sender, EventArgs e)
+        {
+            int box_int = 0;
+            Int32.TryParse(textBox6.Text, out box_int);
+            if (box_int < 0 && textBox6 != null)
+            {
+                textBox6.Text = "0";
+            }
+            else if (box_int > 24 && textBox6 != null)
+            {
+                textBox6.Text = "24";
+                MessageBox.Show("Maximum allowed hours to work per day is 24");
+            }
+        }
+
+
+
+
 
 
 

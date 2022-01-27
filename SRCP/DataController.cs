@@ -18,6 +18,7 @@ namespace SRCP
             list.Add(new Data(now, ShiftCode.Morning, 9, "SzymonKorpusinski"));
             list.Add(new Data(now, ShiftCode.Night, 7, "SzymonKorpusinski"));
             return list;
+            //SELECT * FROM Shifts
         }
 
         public List<Data> findByDate(DateTime date)
@@ -81,6 +82,7 @@ namespace SRCP
             list.Add(new Data(now, ShiftCode.Night, 141414, "SzymonKorpusinski"));
             list.RemoveAll(x => x.day.Date != date.Date);
             //wszystko wyżej zastąpić jednym dobrze napsianym SQL
+            //SELECT* FROM Shifts WHERE WeekNo = 2
             return list;
         }
 
