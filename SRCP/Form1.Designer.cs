@@ -177,7 +177,7 @@ namespace SRCP
             // 
             this.day0.AutoSize = true;
             this.day0.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.day0.Location = new System.Drawing.Point(53, 94);
+            this.day0.Location = new System.Drawing.Point(29, 94);
             this.day0.Name = "day0";
             this.day0.Size = new System.Drawing.Size(51, 13);
             this.day0.TabIndex = 7;
@@ -196,7 +196,7 @@ namespace SRCP
             // 
             this.day1.AutoSize = true;
             this.day1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.day1.Location = new System.Drawing.Point(134, 94);
+            this.day1.Location = new System.Drawing.Point(111, 94);
             this.day1.Name = "day1";
             this.day1.Size = new System.Drawing.Size(55, 13);
             this.day1.TabIndex = 9;
@@ -215,7 +215,7 @@ namespace SRCP
             // 
             this.day2.AutoSize = true;
             this.day2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.day2.Location = new System.Drawing.Point(215, 94);
+            this.day2.Location = new System.Drawing.Point(190, 94);
             this.day2.Name = "day2";
             this.day2.Size = new System.Drawing.Size(73, 13);
             this.day2.TabIndex = 11;
@@ -234,7 +234,7 @@ namespace SRCP
             // 
             this.day3.AutoSize = true;
             this.day3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.day3.Location = new System.Drawing.Point(299, 94);
+            this.day3.Location = new System.Drawing.Point(275, 94);
             this.day3.Name = "day3";
             this.day3.Size = new System.Drawing.Size(59, 13);
             this.day3.TabIndex = 13;
@@ -253,7 +253,7 @@ namespace SRCP
             // 
             this.day5.AutoSize = true;
             this.day5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.day5.Location = new System.Drawing.Point(464, 94);
+            this.day5.Location = new System.Drawing.Point(440, 94);
             this.day5.Name = "day5";
             this.day5.Size = new System.Drawing.Size(57, 13);
             this.day5.TabIndex = 15;
@@ -272,7 +272,7 @@ namespace SRCP
             // 
             this.day4.AutoSize = true;
             this.day4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.day4.Location = new System.Drawing.Point(384, 94);
+            this.day4.Location = new System.Drawing.Point(357, 94);
             this.day4.Name = "day4";
             this.day4.Size = new System.Drawing.Size(41, 13);
             this.day4.TabIndex = 17;
@@ -290,7 +290,7 @@ namespace SRCP
             // 
             this.day6.AutoSize = true;
             this.day6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.day6.Location = new System.Drawing.Point(545, 94);
+            this.day6.Location = new System.Drawing.Point(522, 94);
             this.day6.Name = "day6";
             this.day6.Size = new System.Drawing.Size(49, 13);
             this.day6.TabIndex = 19;
@@ -309,7 +309,7 @@ namespace SRCP
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label17.Location = new System.Drawing.Point(630, 86);
+            this.label17.Location = new System.Drawing.Point(634, 94);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(36, 13);
             this.label17.TabIndex = 21;
@@ -401,7 +401,7 @@ namespace SRCP
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(28, 204);
+            this.label3.Location = new System.Drawing.Point(28, 198);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 13);
             this.label3.TabIndex = 31;
@@ -410,7 +410,7 @@ namespace SRCP
             // shiftCodeComboBox
             // 
             this.shiftCodeComboBox.FormattingEnabled = true;
-            this.shiftCodeComboBox.Location = new System.Drawing.Point(28, 223);
+            this.shiftCodeComboBox.Location = new System.Drawing.Point(28, 217);
             this.shiftCodeComboBox.Name = "shiftCodeComboBox";
             this.shiftCodeComboBox.Size = new System.Drawing.Size(160, 21);
             this.shiftCodeComboBox.TabIndex = 32;
@@ -477,7 +477,7 @@ namespace SRCP
             // 
             this.name.AutoSize = true;
             this.name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.name.Location = new System.Drawing.Point(28, 159);
+            this.name.Location = new System.Drawing.Point(28, 153);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(119, 13);
             this.name.TabIndex = 42;
@@ -485,7 +485,7 @@ namespace SRCP
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(256, 224);
+            this.button2.Location = new System.Drawing.Point(256, 218);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(97, 20);
             this.button2.TabIndex = 44;
@@ -641,7 +641,7 @@ namespace SRCP
             // nameAndSurnameTextField
             // 
             this.nameAndSurnameTextField.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.shiftsBindingSource, "FullName", true));
-            this.nameAndSurnameTextField.Location = new System.Drawing.Point(28, 175);
+            this.nameAndSurnameTextField.Location = new System.Drawing.Point(28, 169);
             this.nameAndSurnameTextField.Name = "nameAndSurnameTextField";
             this.nameAndSurnameTextField.Size = new System.Drawing.Size(325, 20);
             this.nameAndSurnameTextField.TabIndex = 46;

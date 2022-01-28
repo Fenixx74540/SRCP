@@ -63,7 +63,7 @@ namespace SRCP
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'modelDataSet.Shifts' . Możesz go przenieść lub usunąć.
             this.shiftsTableAdapter.Fill(this.modelDataSet.Shifts);
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'modelDataSet.Shifts' . Możesz go przenieść lub usunąć.
-            this.shiftsTableAdapter.Fill(this.modelDataSet.Shifts);
+            //this.shiftsTableAdapter.Fill(this.modelDataSet.Shifts);
             //Populate shiftCodeComboBox and set default option because it cant be null
             foreach (var item in Enum.GetValues(typeof(ShiftCode)))
             {
@@ -94,22 +94,22 @@ namespace SRCP
             }
             setEdgeDates(showedWeek);
             setDayLabels(showedWeek);
-            setTextFields((ShiftCode)Enum.Parse(typeof(ShiftCode), shiftCodeComboBox.SelectedItem.ToString()));
-            setCurrentHours(showedWeek);
+            //setTextFields((ShiftCode)Enum.Parse(typeof(ShiftCode), shiftCodeComboBox.SelectedItem.ToString()));
+            //setCurrentHours(showedWeek);
         }
 
         private void weekBack_Click(object sender, EventArgs e)
         {
             showedWeek = showedWeek.AddDays(-7);
             setEdgeDates(showedWeek);
-            setTextFields((ShiftCode)Enum.Parse(typeof(ShiftCode), shiftCodeComboBox.SelectedItem.ToString()));
+            //setTextFields((ShiftCode)Enum.Parse(typeof(ShiftCode), shiftCodeComboBox.SelectedItem.ToString()));
         }
 
         private void weekForward_Click(object sender, EventArgs e)
         {
             showedWeek = showedWeek.AddDays(7);
             setEdgeDates(showedWeek);
-            setTextFields((ShiftCode)Enum.Parse(typeof(ShiftCode), shiftCodeComboBox.SelectedItem.ToString()));
+            //setTextFields((ShiftCode)Enum.Parse(typeof(ShiftCode), shiftCodeComboBox.SelectedItem.ToString()));
         }
 
         private void setEdgeDates(DateTime week)
@@ -138,7 +138,7 @@ namespace SRCP
             {
                 try
                 {
-                    tb.Text = dataService.getDataByDay(day, shiftCode).hoursWorked.ToString();
+                    //tb.Text = dataService.getDataByDay(day, shiftCode).hoursWorked.ToString();
                 }
                 catch (NullReferenceException e)
                 {
@@ -169,10 +169,10 @@ namespace SRCP
             }
 
         }
-
+        /*
         private void setCurrentHours(DateTime week)
         {
-            /*//miesi�c do wy�wietlenia okre�lony jest za pomoc� wi�kszo�ci dni w wyswietlanym tygodniu
+            //miesi�c do wy�wietlenia okre�lony jest za pomoc� wi�kszo�ci dni w wyswietlanym tygodniu
             //wystarczy sprawdzi� �rodek tygodnia, aby wiedzie� kt�rego miesi�ca dni jest wi�cej w tygodniu
             DateTime pom = week.AddDays(4);
             int month = pom.Month;
@@ -191,25 +191,25 @@ namespace SRCP
             currentHours.Text = sum.ToString();
             */
 
-            
 
-            //nadgodziny
-            /*List<Data> overtimeHours = dataService.getDataByMonth(month);
-            overtimeHours.RemoveAll(x => x.shiftCode == ShiftCode.Night);
-            foreach (Data data in overtimeHours)
-            {
-                data.hoursWorked -= 8;
-                if (data.hoursWorked < 0) data.hoursWorked = 0;
-            }
-            sum = overtimeHours.Sum(x => x.hoursWorked);
-            overtime.Text = sum.ToString();*/
 
-            //Nocki
-           /* List<Data> nightHours = dataService.getDataByMonth(month);
-            nightHours.RemoveAll(x => x.shiftCode != ShiftCode.Night);
-            sum = nightHours.Sum(x => x.hoursWorked);
-            nightShift.Text = sum.ToString();*/
+        //nadgodziny
+        /*List<Data> overtimeHours = dataService.getDataByMonth(month);
+        overtimeHours.RemoveAll(x => x.shiftCode == ShiftCode.Night);
+        foreach (Data data in overtimeHours)
+        {
+            data.hoursWorked -= 8;
+            if (data.hoursWorked < 0) data.hoursWorked = 0;
         }
+        sum = overtimeHours.Sum(x => x.hoursWorked);
+        overtime.Text = sum.ToString();*/
+
+        //Nocki
+        /* List<Data> nightHours = dataService.getDataByMonth(month);
+         nightHours.RemoveAll(x => x.shiftCode != ShiftCode.Night);
+         sum = nightHours.Sum(x => x.hoursWorked);
+         nightShift.Text = sum.ToString();
+    }*/
 
         private void shiftsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
@@ -363,6 +363,8 @@ namespace SRCP
                 MessageBox.Show("Maximum allowed hours to work per day is 24");
             }
         }
+
+      
 
 
 
