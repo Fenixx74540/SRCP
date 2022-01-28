@@ -68,8 +68,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data.cs" />
-    <Compile Include="DataController.cs" />
-    <Compile Include="DataService.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

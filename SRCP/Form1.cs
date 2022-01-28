@@ -9,7 +9,7 @@ namespace SRCP
 {
     public partial class Form1 : Form
     {
-        DataService dataService = new DataService();
+        //DataService dataService = new DataService();
 
         int monthlyHoursNorm = 40;
         int daylyHoursMax = 24;
@@ -133,21 +133,10 @@ namespace SRCP
 
         private void setTextFields(ShiftCode shiftCode)
         {
-            DateTime day = showedWeek.Date;
+            //DateTime day = showedWeek.Date;
             foreach (TextBox tb in textBoxes)
             {
-                try
-                {
-                    //tb.Text = dataService.getDataByDay(day, shiftCode).hoursWorked.ToString();
-                }
-                catch (NullReferenceException e)
-                {
-                    tb.Text = "0";
-                }
-                finally
-                {
-                    day = day.AddDays(1);
-                }
+                tb.Text = "0";
             }
         }
 

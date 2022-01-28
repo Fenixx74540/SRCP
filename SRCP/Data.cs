@@ -13,7 +13,9 @@ namespace SRCP
         Evening,
         Night
     }
-    public class Data
+
+    //Do testowania przed podłączeniem BD
+    /*public class Data
     {
         public DateTime day { get; set; }
         public ShiftCode shiftCode { get; set; }
@@ -28,8 +30,6 @@ namespace SRCP
             this.nameAndSurname = nameAndSurname;
         }
 
-
-
         public Data(Data data)
         {
             this.day = data.day;
@@ -37,5 +37,5 @@ namespace SRCP
             this.hoursWorked = data.hoursWorked;
             this.nameAndSurname = data.nameAndSurname;
         }
-    }
+    }*/
 }
