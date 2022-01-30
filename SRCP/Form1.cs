@@ -21,8 +21,6 @@ namespace SRCP
         }
 
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\mateu\Source\Repos\Fenixx74540\SRCP\SRCP\Database.mdf;Integrated Security=True");
-        SqlDataAdapter da;
-        DataSet ds;
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -193,47 +191,6 @@ namespace SRCP
             }
 
         }
-        /*
-        private void setCurrentHours(DateTime week)
-        {
-            //miesi�c do wy�wietlenia okre�lony jest za pomoc� wi�kszo�ci dni w wyswietlanym tygodniu
-            //wystarczy sprawdzi� �rodek tygodnia, aby wiedzie� kt�rego miesi�ca dni jest wi�cej w tygodniu
-            DateTime pom = week.AddDays(4);
-            int month = pom.Month;
-
-            //wszystkie przepracowane godziny w stawce standardowej
-            List<Data> dayHours = dataService.getDataByMonth(month);
-            dayHours.RemoveAll(x => x.shiftCode == ShiftCode.Night);
-            foreach (Data data in dayHours)
-            {
-                if (data.hoursWorked > 8)
-                {
-                    data.hoursWorked = 8;
-                }
-            }
-            int sum = dayHours.Sum(x => x.hoursWorked);
-            currentHours.Text = sum.ToString();
-            */
-
-
-
-        //nadgodziny
-        /*List<Data> overtimeHours = dataService.getDataByMonth(month);
-        overtimeHours.RemoveAll(x => x.shiftCode == ShiftCode.Night);
-        foreach (Data data in overtimeHours)
-        {
-            data.hoursWorked -= 8;
-            if (data.hoursWorked < 0) data.hoursWorked = 0;
-        }
-        sum = overtimeHours.Sum(x => x.hoursWorked);
-        overtime.Text = sum.ToString();*/
-
-        //Nocki
-        /* List<Data> nightHours = dataService.getDataByMonth(month);
-         nightHours.RemoveAll(x => x.shiftCode != ShiftCode.Night);
-         sum = nightHours.Sum(x => x.hoursWorked);
-         nightShift.Text = sum.ToString();
-    }*/
 
         private void shiftsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
@@ -616,54 +573,5 @@ namespace SRCP
                 textBox6.ForeColor = Color.Silver;
             }
         }
-
-     
-
-
-
-
-
-
-            //WIP
-            /* private void button1_Click(object sender, EventArgs e)
-             {
-                 //miesi�c do wy�wietlenia okre�lony jest za pomoc� wi�kszo�ci dni w wyswietlanym tygodniu
-                 //wystarczy sprawdzi� �rodek tygodnia, aby wiedzie� kt�rego miesi�ca dni jest wi�cej w tygodniu
-                 DateTime pom = week.AddDays(4);
-                 int month = pom.Month;
-
-                 //wszystkie przepracowane godziny w stawce standardowej
-                 List<Data> dayHours = dataService.getDataByMonth(month);
-                 dayHours.RemoveAll(x => x.shiftCode == ShiftCode.Night);
-                 foreach (Data data in dayHours)
-                 {
-                     if (data.hoursWorked > 8)
-                     {
-                         data.hoursWorked = 8;
-                     }
-                 }
-                 int sum = dayHours.Sum(x => x.hoursWorked);
-                 currentHours.Text = sum.ToString();
-
-                 //ilo�� godzin do przepracowania
-                 monthlyHours.Text = (monthlyHoursNorm - sum).ToString();
-
-                 //nadgodziny
-                 List<Data> overtimeHours = dataService.getDataByMonth(month);
-                 overtimeHours.RemoveAll(x => x.shiftCode == ShiftCode.Night);
-                 foreach (Data data in overtimeHours)
-                 {
-                     data.hoursWorked -= 8;
-                     if (data.hoursWorked < 0) data.hoursWorked = 0;
-                 }
-                 sum = overtimeHours.Sum(x => x.hoursWorked);
-                 overtime.Text = sum.ToString();
-
-                 //Nocki
-                 List<Data> nightHours = dataService.getDataByMonth(month);
-                 nightHours.RemoveAll(x => x.shiftCode != ShiftCode.Night);
-                 sum = nightHours.Sum(x => x.hoursWorked);
-                 nightShift.Text = sum.ToString();
-             }*/
-        }
+    }
 }
