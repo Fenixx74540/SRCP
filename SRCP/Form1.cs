@@ -21,16 +21,39 @@ namespace SRCP
         }
 
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\mateu\Source\Repos\Fenixx74540\SRCP\SRCP\Database.mdf;Integrated Security=True");
+        SqlDataAdapter da;
+        DataSet ds;
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
-            SqlCommand sqlCommand = new SqlCommand("INSERT INTO Shifts (WeekNo, Shift, Hours, FullName) VALUES('" +weekNoLabel.Text+ "','" +shiftCodeComboBox.Text+ "','"+totalHours.Text+"','"+nameAndSurnameTextField.Text+"')", con);
 
-            con.Open();
-            sqlCommand.ExecuteNonQuery();
-            con.Close();
-            MessageBox.Show("Data saved Successfuly");
+            //zapytanie na samo dodanie nowych dnaych
+            //SqlCommand sqlCommand = new SqlCommand("INSERT INTO Shifts (WeekNo, Shift, Hours, FullName) VALUES('" +weekNoLabel.Text+ "','" +shiftCodeComboBox.Text+ "','"+totalHours.Text+"','"+nameAndSurnameTextField.Text+"')", con);
+            SqlDataAdapter adapter = new SqlDataAdapter();
+                
+            //zapytanie na uaktualnienie wiersza lub stworzenie jeśli nie istnieje
+            String sql = "IF EXISTS (SELECT * FROM Shifts WHERE (FullName = '" + nameAndSurnameTextField.Text + "' AND WeekNo = '" + weekNoLabel.Text + "'))" +
+                "BEGIN UPDATE Shifts SET WeekNo = '" + weekNoLabel.Text + "', Shift = '" + shiftCodeComboBox.Text + "', Hours = '" + totalHours.Text + "', FullName = '" + nameAndSurnameTextField.Text + "'" +
+                "WHERE FullName = '" + nameAndSurnameTextField.Text + "' AND WeekNo = '" + weekNoLabel.Text + "'" +
+                "END ELSE BEGIN " +
+                "INSERT INTO Shifts (WeekNo, Shift, Hours, FullName) VALUES('" + weekNoLabel.Text + "','" + shiftCodeComboBox.Text + "','" + totalHours.Text + "','" + nameAndSurnameTextField.Text + "')" +
+                "END";
+ 
+            
+            try
+            {
+                con.Open();
+                adapter.UpdateCommand = con.CreateCommand();
+                adapter.UpdateCommand.CommandText = sql;
+                adapter.UpdateCommand.ExecuteNonQuery();
+                MessageBox.Show("Data saved Successfuly");
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void button3_Click(object sender, EventArgs e)
