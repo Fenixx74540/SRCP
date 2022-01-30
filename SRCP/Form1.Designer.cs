@@ -99,6 +99,10 @@ namespace SRCP
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
             this.weekNoTB = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.fullNameTB = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.label5 = new System.Windows.Forms.Label();
             weekNoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.modelDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shiftsBindingSource)).BeginInit();
@@ -309,7 +313,7 @@ namespace SRCP
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label17.Location = new System.Drawing.Point(619, 155);
+            this.label17.Location = new System.Drawing.Point(635, 153);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(36, 13);
             this.label17.TabIndex = 21;
@@ -391,7 +395,7 @@ namespace SRCP
             // totalHours
             // 
             this.totalHours.AutoSize = true;
-            this.totalHours.Location = new System.Drawing.Point(615, 183);
+            this.totalHours.Location = new System.Drawing.Point(631, 181);
             this.totalHours.Name = "totalHours";
             this.totalHours.Size = new System.Drawing.Size(55, 13);
             this.totalHours.TabIndex = 30;
@@ -667,7 +671,7 @@ namespace SRCP
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(619, 257);
+            this.button3.Location = new System.Drawing.Point(619, 261);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(84, 23);
             this.button3.TabIndex = 49;
@@ -680,12 +684,12 @@ namespace SRCP
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Location = new System.Drawing.Point(12, 261);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(514, 220);
+            this.dataGridView.Size = new System.Drawing.Size(537, 220);
             this.dataGridView.TabIndex = 50;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(594, 286);
+            this.button4.Location = new System.Drawing.Point(594, 373);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(109, 23);
             this.button4.TabIndex = 51;
@@ -695,17 +699,61 @@ namespace SRCP
             // 
             // weekNoTB
             // 
-            this.weekNoTB.Location = new System.Drawing.Point(532, 289);
+            this.weekNoTB.ForeColor = System.Drawing.Color.Gray;
+            this.weekNoTB.Location = new System.Drawing.Point(644, 347);
             this.weekNoTB.Name = "weekNoTB";
             this.weekNoTB.Size = new System.Drawing.Size(56, 20);
             this.weekNoTB.TabIndex = 53;
             this.weekNoTB.Text = "Week no.";
+            this.weekNoTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.weekNoTB.Enter += new System.EventHandler(this.weekNoTB_Enter);
+            this.weekNoTB.Leave += new System.EventHandler(this.weekNoTB_Leave);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(591, 446);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(112, 23);
+            this.button5.TabIndex = 54;
+            this.button5.Text = "Search by full name";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // fullNameTB
+            // 
+            this.fullNameTB.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.fullNameTB.Location = new System.Drawing.Point(555, 420);
+            this.fullNameTB.Name = "fullNameTB";
+            this.fullNameTB.Size = new System.Drawing.Size(148, 20);
+            this.fullNameTB.TabIndex = 56;
+            this.fullNameTB.Text = "Name and surname";
+            this.fullNameTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.fullNameTB.Enter += new System.EventHandler(this.fullNameTB_Enter);
+            this.fullNameTB.Leave += new System.EventHandler(this.fullNameTB_Leave);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.Location = new System.Drawing.Point(604, 331);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(96, 13);
+            this.label5.TabIndex = 58;
+            this.label5.Text = "Search options:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(715, 491);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.fullNameTB);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.weekNoTB);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.dataGridView);
@@ -835,5 +883,9 @@ namespace SRCP
         private DataGridView dataGridView;
         private Button button4;
         private TextBox weekNoTB;
+        private Button button5;
+        private TextBox fullNameTB;
+        private ContextMenuStrip contextMenuStrip1;
+        private Label label5;
     }
 }

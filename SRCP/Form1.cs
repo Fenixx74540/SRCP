@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data;
+using System.Drawing;
 
 namespace SRCP
 {
@@ -57,6 +58,18 @@ namespace SRCP
             dataGridView.DataSource = dtbl;
             con.Close();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT * FROM Shifts WHERE FullName LIKE '%" + fullNameTB.Text + "%' ", con);
+            DataTable dtbl = new DataTable();
+            sqlDataAdapter.Fill(dtbl);
+            dataGridView.DataSource = dtbl;
+            con.Close();
+        }
+
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -353,7 +366,46 @@ namespace SRCP
             }
         }
 
-      
+        //placeholder dla weekNoTV oraz fullNameTB 
+        private void weekNoTB_Enter(object sender, EventArgs e)
+        {
+            if (weekNoTB.Text == "Week no.")
+            {
+                weekNoTB.Text = "";
+                weekNoTB.ForeColor = Color.Black;
+            }
+        }
+
+        private void weekNoTB_Leave(object sender, EventArgs e)
+        {
+            if (weekNoTB.Text == "")
+            {
+                weekNoTB.Text = "Week no.";
+                weekNoTB.ForeColor = Color.Silver;
+            }
+        }
+
+        private void fullNameTB_Enter(object sender, EventArgs e)
+        {
+            if (fullNameTB.Text == "Name and surname")
+            {
+                fullNameTB.Text = "";
+                fullNameTB.ForeColor = Color.Black;
+            }
+        }
+
+        private void fullNameTB_Leave(object sender, EventArgs e)
+        {
+            if (fullNameTB.Text == "")
+            {
+                fullNameTB.Text = "Name and surname";
+                fullNameTB.ForeColor = Color.Silver;
+            }
+        }
+
+
+
+
 
 
 
