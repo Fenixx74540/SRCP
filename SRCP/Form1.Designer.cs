@@ -113,9 +113,9 @@ namespace SRCP
             weekNoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             weekNoLabel.Location = new System.Drawing.Point(552, 99);
             weekNoLabel.Name = "weekNoLabel";
-            weekNoLabel.Size = new System.Drawing.Size(64, 13);
+            weekNoLabel.Size = new System.Drawing.Size(66, 13);
             weekNoLabel.TabIndex = 47;
-            weekNoLabel.Text = "Week No:";
+            weekNoLabel.Text = "Week no.:";
             // 
             // label1
             // 
@@ -695,14 +695,11 @@ namespace SRCP
             // 
             // weekNoTB
             // 
-            this.weekNoTB.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.shiftsBindingSource, "FullName", true));
             this.weekNoTB.Location = new System.Drawing.Point(532, 289);
-            this.weekNoTB.MaxLength = 50;
             this.weekNoTB.Name = "weekNoTB";
-            this.weekNoTB.Size = new System.Drawing.Size(57, 20);
-            this.weekNoTB.TabIndex = 52;
-            this.weekNoTB.Text = "Week No";
-            this.weekNoTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyDigitsKeyPress);
+            this.weekNoTB.Size = new System.Drawing.Size(56, 20);
+            this.weekNoTB.TabIndex = 53;
+            this.weekNoTB.Text = "Week no.";
             // 
             // Form1
             // 
