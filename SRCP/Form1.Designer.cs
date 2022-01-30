@@ -33,7 +33,7 @@ namespace SRCP
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label weekNoLabel;
+            System.Windows.Forms.Label weekNoLabelText;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.weekBack = new System.Windows.Forms.Button();
@@ -93,8 +93,6 @@ namespace SRCP
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.shiftsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.nameAndSurnameTextField = new System.Windows.Forms.TextBox();
-            this.countBtn = new System.Windows.Forms.Button();
-            this.weekNoTextBox = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
@@ -103,7 +101,8 @@ namespace SRCP
             this.fullNameTB = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label5 = new System.Windows.Forms.Label();
-            weekNoLabel = new System.Windows.Forms.Label();
+            this.weekNoLabel = new System.Windows.Forms.Label();
+            weekNoLabelText = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.modelDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shiftsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shiftsBindingNavigator)).BeginInit();
@@ -111,15 +110,15 @@ namespace SRCP
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // weekNoLabel
+            // weekNoLabelText
             // 
-            weekNoLabel.AutoSize = true;
-            weekNoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            weekNoLabel.Location = new System.Drawing.Point(552, 99);
-            weekNoLabel.Name = "weekNoLabel";
-            weekNoLabel.Size = new System.Drawing.Size(66, 13);
-            weekNoLabel.TabIndex = 47;
-            weekNoLabel.Text = "Week no.:";
+            weekNoLabelText.AutoSize = true;
+            weekNoLabelText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            weekNoLabelText.Location = new System.Drawing.Point(535, 103);
+            weekNoLabelText.Name = "weekNoLabelText";
+            weekNoLabelText.Size = new System.Drawing.Size(66, 13);
+            weekNoLabelText.TabIndex = 47;
+            weekNoLabelText.Text = "Week no.:";
             // 
             // label1
             // 
@@ -313,11 +312,11 @@ namespace SRCP
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label17.Location = new System.Drawing.Point(635, 153);
+            this.label17.Location = new System.Drawing.Point(595, 155);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(36, 13);
+            this.label17.Size = new System.Drawing.Size(31, 13);
             this.label17.TabIndex = 21;
-            this.label17.Text = "Total";
+            this.label17.Text = "Sum";
             // 
             // labelNameDay5
             // 
@@ -330,72 +329,100 @@ namespace SRCP
             // 
             // textBox0
             // 
+            this.textBox0.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.textBox0.Location = new System.Drawing.Point(13, 204);
             this.textBox0.Name = "textBox0";
             this.textBox0.Size = new System.Drawing.Size(78, 20);
             this.textBox0.TabIndex = 23;
+            this.textBox0.Text = "0";
             this.textBox0.TextChanged += new System.EventHandler(this.textBox0_Changed);
+            this.textBox0.Enter += new System.EventHandler(this.textBox0_Enter);
             this.textBox0.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyDigitsKeyPress);
+            this.textBox0.Leave += new System.EventHandler(this.textBox0_Leave);
             // 
             // textBox1
             // 
+            this.textBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.textBox1.Location = new System.Drawing.Point(96, 204);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(78, 20);
             this.textBox1.TabIndex = 24;
+            this.textBox1.Text = "0";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_Changed);
+            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyDigitsKeyPress);
+            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // textBox2
             // 
+            this.textBox2.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.textBox2.Location = new System.Drawing.Point(178, 204);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(78, 20);
             this.textBox2.TabIndex = 25;
+            this.textBox2.Text = "0";
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_Changed);
+            this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter);
             this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyDigitsKeyPress);
+            this.textBox2.Leave += new System.EventHandler(this.textBox2_Leave);
             // 
             // textBox3
             // 
+            this.textBox3.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.textBox3.Location = new System.Drawing.Point(260, 204);
             this.textBox3.MaxLength = 2;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(78, 20);
             this.textBox3.TabIndex = 26;
+            this.textBox3.Text = "0";
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_Changed);
+            this.textBox3.Enter += new System.EventHandler(this.textBox3_Enter);
             this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyDigitsKeyPress);
+            this.textBox3.Leave += new System.EventHandler(this.textBox3_Leave);
             // 
             // textBox4
             // 
+            this.textBox4.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.textBox4.Location = new System.Drawing.Point(342, 204);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(78, 20);
             this.textBox4.TabIndex = 27;
+            this.textBox4.Text = "0";
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_Changed);
+            this.textBox4.Enter += new System.EventHandler(this.textBox4_Enter);
             this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyDigitsKeyPress);
+            this.textBox4.Leave += new System.EventHandler(this.textBox4_Leave);
             // 
             // textBox5
             // 
+            this.textBox5.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.textBox5.Location = new System.Drawing.Point(425, 204);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(78, 20);
             this.textBox5.TabIndex = 28;
+            this.textBox5.Text = "0";
             this.textBox5.TextChanged += new System.EventHandler(this.textBox5_Changed);
+            this.textBox5.Enter += new System.EventHandler(this.textBox5_Enter);
             this.textBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyDigitsKeyPress);
+            this.textBox5.Leave += new System.EventHandler(this.textBox5_Leave);
             // 
             // textBox6
             // 
+            this.textBox6.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.textBox6.Location = new System.Drawing.Point(507, 204);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(78, 20);
             this.textBox6.TabIndex = 29;
+            this.textBox6.Text = "0";
             this.textBox6.TextChanged += new System.EventHandler(this.textBox6_Changed);
+            this.textBox6.Enter += new System.EventHandler(this.textBox6_Enter);
             this.textBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyDigitsKeyPress);
+            this.textBox6.Leave += new System.EventHandler(this.textBox6_Leave);
             // 
             // totalHours
             // 
             this.totalHours.AutoSize = true;
-            this.totalHours.Location = new System.Drawing.Point(631, 181);
+            this.totalHours.Location = new System.Drawing.Point(595, 179);
             this.totalHours.Name = "totalHours";
             this.totalHours.Size = new System.Drawing.Size(55, 13);
             this.totalHours.TabIndex = 30;
@@ -489,11 +516,11 @@ namespace SRCP
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(619, 231);
+            this.button2.Location = new System.Drawing.Point(594, 204);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 20);
+            this.button2.Size = new System.Drawing.Size(112, 36);
             this.button2.TabIndex = 44;
-            this.button2.Text = "Zapisz";
+            this.button2.Text = "Save";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -650,28 +677,9 @@ namespace SRCP
             this.nameAndSurnameTextField.Size = new System.Drawing.Size(325, 20);
             this.nameAndSurnameTextField.TabIndex = 46;
             // 
-            // countBtn
-            // 
-            this.countBtn.Location = new System.Drawing.Point(617, 202);
-            this.countBtn.Name = "countBtn";
-            this.countBtn.Size = new System.Drawing.Size(86, 23);
-            this.countBtn.TabIndex = 47;
-            this.countBtn.Text = "Count hours";
-            this.countBtn.UseVisualStyleBackColor = true;
-            this.countBtn.Click += new System.EventHandler(this.countBtn_Click);
-            // 
-            // weekNoTextBox
-            // 
-            this.weekNoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.shiftsBindingSource, "WeekNo", true));
-            this.weekNoTextBox.Location = new System.Drawing.Point(555, 119);
-            this.weekNoTextBox.Name = "weekNoTextBox";
-            this.weekNoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.weekNoTextBox.TabIndex = 48;
-            this.weekNoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyDigitsKeyPress);
-            // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(619, 261);
+            this.button3.Location = new System.Drawing.Point(619, 297);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(84, 23);
             this.button3.TabIndex = 49;
@@ -700,7 +708,7 @@ namespace SRCP
             // weekNoTB
             // 
             this.weekNoTB.ForeColor = System.Drawing.Color.Gray;
-            this.weekNoTB.Location = new System.Drawing.Point(644, 347);
+            this.weekNoTB.Location = new System.Drawing.Point(647, 347);
             this.weekNoTB.Name = "weekNoTB";
             this.weekNoTB.Size = new System.Drawing.Size(56, 20);
             this.weekNoTB.TabIndex = 53;
@@ -740,17 +748,27 @@ namespace SRCP
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(604, 331);
+            this.label5.Location = new System.Drawing.Point(607, 281);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 13);
             this.label5.TabIndex = 58;
             this.label5.Text = "Search options:";
+            // 
+            // weekNoLabel
+            // 
+            this.weekNoLabel.AutoSize = true;
+            this.weekNoLabel.Location = new System.Drawing.Point(535, 122);
+            this.weekNoLabel.Name = "weekNoLabel";
+            this.weekNoLabel.Size = new System.Drawing.Size(35, 13);
+            this.weekNoLabel.TabIndex = 59;
+            this.weekNoLabel.Text = "label7";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(715, 491);
+            this.Controls.Add(this.weekNoLabel);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.fullNameTB);
             this.Controls.Add(this.button5);
@@ -758,9 +776,7 @@ namespace SRCP
             this.Controls.Add(this.button4);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.button3);
-            this.Controls.Add(weekNoLabel);
-            this.Controls.Add(this.weekNoTextBox);
-            this.Controls.Add(this.countBtn);
+            this.Controls.Add(weekNoLabelText);
             this.Controls.Add(this.nameAndSurnameTextField);
             this.Controls.Add(this.shiftsBindingNavigator);
             this.Controls.Add(this.button2);
@@ -877,8 +893,6 @@ namespace SRCP
         private ToolStripSeparator bindingNavigatorSeparator2;
         private ToolStripButton shiftsBindingNavigatorSaveItem;
         private TextBox nameAndSurnameTextField;
-        private Button countBtn;
-        private TextBox weekNoTextBox;
         private Button button3;
         private DataGridView dataGridView;
         private Button button4;
@@ -887,5 +901,6 @@ namespace SRCP
         private TextBox fullNameTB;
         private ContextMenuStrip contextMenuStrip1;
         private Label label5;
+        private Label weekNoLabel;
     }
 }
